@@ -11,7 +11,6 @@ import java.util.List;
 @CrossOrigin
 public class SailBoatController {
 
-
     @Autowired
     private SailboatsService sailboatsService;
 

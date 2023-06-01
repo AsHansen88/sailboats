@@ -50,6 +50,12 @@ public class initdata implements CommandLineRunner {
     boat40.setId(3);
     boat40Repository.save(boat40);
 
+    Sailboats sailboats = new Sailboats();
+    sailboats.setBoat40(boat40);
+    sailboats.setBoat25_40(boat25_40);
+    sailboats.setBoat25(boat25);
+    sailboatsRepository.save(sailboats);
+
     //Competition
 
     CompetitionModel competition = new CompetitionModel();
