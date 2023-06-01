@@ -34,42 +34,6 @@ public class SailBoatController {
     }
   }
 
-  @PostMapping("/boats")
-  public Sailboats addBoat(@RequestBody Sailboats boat) {
-    try {
-      sailboatsRepository.save(boat);
-    } catch (Exception e) {
-      System.out.println(e.getMessage());
-    }
-    return boat;
-  }
-
-  @PutMapping("/boats/{id}")
-  public ResponseEntity<Sailboats> updateBoat(@PathVariable(value = "id") int boatId, @RequestBody Sailboats boatDetails) {
-    Optional<Sailboats> boat = sailboatsRepository.findById(boatId);
-    if (boat.isPresent()) {
-      Sailboats updatedBoat = boat.get();
-      updatedBoat.setBoat25(boatDetails.getBoat25());
-      updatedBoat.setBoat25_40(boatDetails.getBoat25_40());
-      updatedBoat.setBoat40(boatDetails.getBoat40());
-
-      sailboatsRepository.save(updatedBoat);
-      return ResponseEntity.ok().body(updatedBoat);
-    } else {
-      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Boat not found");
-    }
-  }
-
-  @DeleteMapping("/boats/{id}")
-  public ResponseEntity<?> deleteBoat(@PathVariable(value = "id") int boatId) {
-    Optional<Sailboats> boat = sailboatsRepository.findById(boatId);
-    if (boat.isPresent()) {
-      sailboatsRepository.delete(boat.get());
-      return ResponseEntity.ok().build();
-    } else {
-      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Boat not found");
-    }
-  }
 }
 
 
