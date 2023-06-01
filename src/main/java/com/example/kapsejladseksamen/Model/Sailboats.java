@@ -29,7 +29,6 @@ public class Sailboats {
     this.id = id;
   }
 
-
   public Boat25 getBoat25() {
     return boat25;
   }

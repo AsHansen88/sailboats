@@ -48,11 +48,9 @@ public class SailBoatController {
     Optional<Sailboats> boat = sailboatsRepository.findById(boatId);
     if (boat.isPresent()) {
       Sailboats updatedBoat = boat.get();
-      // Update the properties of the updatedBoat object with the values from boatDetails object
       updatedBoat.setBoat25(boatDetails.getBoat25());
       updatedBoat.setBoat25_40(boatDetails.getBoat25_40());
       updatedBoat.setBoat40(boatDetails.getBoat40());
-      // Update other properties accordingly
 
       sailboatsRepository.save(updatedBoat);
       return ResponseEntity.ok().body(updatedBoat);
