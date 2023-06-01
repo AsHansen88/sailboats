@@ -21,12 +21,12 @@ public class Boat25_40Controller {
   @Autowired
   Boat25_40Repository boat25_40Repository;
 
-  @GetMapping("/boats25-40")
+  @GetMapping("/boats")
   public List<Boat25_40> getAllBoats() {
     return boat25_40Repository.findAll();
   }
 
-  @GetMapping("/boats25_40/{id}")
+  @GetMapping("/boats/{id}")
   public ResponseEntity<Boat25_40> getBoatById(@PathVariable(value = "id") int boatId) {
     Optional<Boat25_40> boat = boat25_40Repository.findById(boatId);
     if (boat.isPresent()) {
@@ -36,7 +36,7 @@ public class Boat25_40Controller {
     }
   }
 
-  @PostMapping("/boats25_40")
+  @PostMapping("/boats")
   public Boat25_40 addBoat(@RequestBody Boat25_40 boat) {
     try {
       return boat25_40Repository.save(boat);
@@ -46,7 +46,7 @@ public class Boat25_40Controller {
     }
   }
 
-  @PutMapping("/boats25_40/{id}")
+  @PutMapping("/boats/{id}")
   public ResponseEntity<Boat25_40> updateBoat(@PathVariable(value = "id") int boatId, @RequestBody Boat25_40 boatDetails) {
     Optional<Boat25_40> boat = boat25_40Repository.findById(boatId);
     if (boat.isPresent()) {
@@ -65,7 +65,7 @@ public class Boat25_40Controller {
     }
   }
 
-  @DeleteMapping("/boats25_40/{id}")
+  @DeleteMapping("/boats/{id}")
   public ResponseEntity<?> deleteBoat(@PathVariable(value = "id") int boatId) {
     Optional<Boat25_40> boat = boat25_40Repository.findById(boatId);
     if (boat.isPresent()) {

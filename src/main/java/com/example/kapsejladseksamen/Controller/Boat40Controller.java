@@ -1,9 +1,7 @@
 package com.example.kapsejladseksamen.Controller;
 
 import com.example.kapsejladseksamen.Model.Boats40;
-import com.example.kapsejladseksamen.Model.Sailboats;
 import com.example.kapsejladseksamen.Repository.Boat40Repository;
-import com.example.kapsejladseksamen.Repository.SailboatsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
