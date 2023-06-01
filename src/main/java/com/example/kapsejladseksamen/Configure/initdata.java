@@ -3,6 +3,7 @@ package com.example.kapsejladseksamen.Configure;
 import com.example.kapsejladseksamen.Model.Boat25;
 import com.example.kapsejladseksamen.Model.Boat25_40;
 import com.example.kapsejladseksamen.Model.Boats40;
+import com.example.kapsejladseksamen.Model.Sailboats;
 import com.example.kapsejladseksamen.Repository.Boat25Repository;
 import com.example.kapsejladseksamen.Repository.Boat25_40Repository;
 import com.example.kapsejladseksamen.Repository.Boat40Repository;
@@ -33,6 +34,23 @@ public class initdata implements CommandLineRunner {
     boat25.setId(1);
     boat25Repository.save(boat25);
 
+    Boat25_40 boat25_40 = new Boat25_40();
+    boat25_40.setName("Anders");
+    boat25_40.setNumber(1);
+    boat25_40.setId(1);
+    boat25_40Repository.save(boat25_40);
+
+    Boats40 boat40 = new Boats40();
+    boat40.setName("Niels");
+    boat40.setNumber(3);
+    boat40.setId(3);
+    boat40Repository.save(boat40);
+
+    Sailboats sailboats = new Sailboats();
+    sailboats.setName("Holger");
+    sailboats.setLength(40);
+    sailboats.setId(4);
+    sailboatsRepository.save(sailboats);
 
   }
 
