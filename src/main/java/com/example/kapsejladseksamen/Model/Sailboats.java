@@ -7,9 +7,6 @@ public class Sailboats {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
-  private String name;
-  private int length;
-
 
     @ManyToOne
     @JoinColumn(name = "boat25", referencedColumnName = "boat25")
@@ -31,7 +28,7 @@ public class Sailboats {
   public void setId(int id) {
     this.id = id;
   }
-
+/*
   public String getName() {
     return name;
   }
@@ -47,7 +44,7 @@ public class Sailboats {
   public void setLength(int length) {
     this.length = length;
   }
-
+*/
 
   public Boat25 getBoat25() {
     return boat25;
