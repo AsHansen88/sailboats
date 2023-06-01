@@ -10,7 +10,9 @@ import com.example.kapsejladseksamen.Repository.Boat40Repository;
 import com.example.kapsejladseksamen.Repository.SailboatsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class initdata implements CommandLineRunner {
 
   @Autowired
@@ -37,13 +39,13 @@ public class initdata implements CommandLineRunner {
     Boat25_40 boat25_40 = new Boat25_40();
     boat25_40.setName("Anders");
     boat25_40.setNumber(1);
-    boat25_40.setId(1);
+    boat25_40.setId(2);
     boat25_40Repository.save(boat25_40);
 
     Boats40 boat40 = new Boats40();
     boat40.setName("Niels");
     boat40.setNumber(3);
-    boat40.setId(1);
+    boat40.setId(3);
     boat40Repository.save(boat40);
 
     Sailboats sailboats = new Sailboats();
@@ -51,6 +53,8 @@ public class initdata implements CommandLineRunner {
     sailboats.setBoat25_40(boat25_40);
     sailboats.setBoat40(boat40);
     sailboatsRepository.save(sailboats);
+
+
   }
 
   }

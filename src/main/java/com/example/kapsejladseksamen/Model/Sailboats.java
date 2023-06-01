@@ -9,15 +9,15 @@ public class Sailboats {
   private int id;
 
     @ManyToOne
-    @JoinColumn(name = "boat25", referencedColumnName = "boat25")
+    @JoinColumn(name = "bo25id", referencedColumnName = "boat25id")
     private Boat25 boat25;
 
     @ManyToOne
-    @JoinColumn(name = "boat40", referencedColumnName = "boat40")
+    @JoinColumn(name = "bo40id", referencedColumnName = "boat40id")
     private Boats40 boat40;
 
     @ManyToOne
-    @JoinColumn(name = "boat25_40", referencedColumnName = "boat25_40")
+    @JoinColumn(name = "bo25_40id", referencedColumnName = "boat25_40id")
     private Boat25_40 boat25_40;
 
 
@@ -28,23 +28,7 @@ public class Sailboats {
   public void setId(int id) {
     this.id = id;
   }
-/*
-  public String getName() {
-    return name;
-  }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public int getLength() {
-    return length;
-  }
-
-  public void setLength(int length) {
-    this.length = length;
-  }
-*/
 
   public Boat25 getBoat25() {
     return boat25;
