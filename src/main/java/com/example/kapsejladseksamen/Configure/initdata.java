@@ -1,13 +1,7 @@
 package com.example.kapsejladseksamen.Configure;
 
-import com.example.kapsejladseksamen.Model.Boat25;
-import com.example.kapsejladseksamen.Model.Boat25_40;
-import com.example.kapsejladseksamen.Model.Boats40;
-import com.example.kapsejladseksamen.Model.Sailboats;
-import com.example.kapsejladseksamen.Repository.Boat25Repository;
-import com.example.kapsejladseksamen.Repository.Boat25_40Repository;
-import com.example.kapsejladseksamen.Repository.Boat40Repository;
-import com.example.kapsejladseksamen.Repository.SailboatsRepository;
+import com.example.kapsejladseksamen.Model.*;
+import com.example.kapsejladseksamen.Repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -26,6 +20,11 @@ public class initdata implements CommandLineRunner {
 
   @Autowired
   SailboatsRepository sailboatsRepository;
+
+  @Autowired
+  CompetitionRepository competitionRepository;
+
+  //Boats
 
   @Override
   public void run(String... args) throws Exception {
@@ -54,7 +53,15 @@ public class initdata implements CommandLineRunner {
     sailboats.setBoat40(boat40);
     sailboatsRepository.save(sailboats);
 
+    //Competition
 
-  }
+    CompetitionModel competition = new CompetitionModel();
+    competition.setName("Holger");
+    competition.setId(1);
+    competition.setBoattype("40fods");
+    competition.setPoints(3);
+    competitionRepository.save(competition);
+
+    }
 
   }
