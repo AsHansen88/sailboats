@@ -1,3 +1,4 @@
+
 package com.example.kapsejladseksamen.Configure;
 
 import com.example.kapsejladseksamen.Model.*;
@@ -5,6 +6,8 @@ import com.example.kapsejladseksamen.Repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+
 
 @Component
 public class initdata implements CommandLineRunner {
@@ -56,6 +59,6 @@ public class initdata implements CommandLineRunner {
     competition.setPoints(3);
     competitionRepository.save(competition);
 
-    }
-
   }
+
+}
