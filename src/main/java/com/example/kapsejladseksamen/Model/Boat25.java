@@ -13,7 +13,7 @@ public class Boat25 {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name="boat25")
+  @Column(name="boat25id")
   private int id;
   private String name;
   private int number;
