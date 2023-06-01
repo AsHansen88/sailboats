@@ -11,6 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 import java.util.Optional;
 @RestController
+@CrossOrigin
 public class Boat25_40Controller {
 
 
