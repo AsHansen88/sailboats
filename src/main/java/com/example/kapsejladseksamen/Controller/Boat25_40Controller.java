@@ -1,11 +1,7 @@
 package com.example.kapsejladseksamen.Controller;
 
-import com.example.kapsejladseksamen.Model.Boat25;
 import com.example.kapsejladseksamen.Model.Boat25_40;
-import com.example.kapsejladseksamen.Model.Sailboats;
-import com.example.kapsejladseksamen.Repository.Boat25Repository;
 import com.example.kapsejladseksamen.Repository.Boat25_40Repository;
-import com.example.kapsejladseksamen.Repository.SailboatsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,19 +10,19 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
-
+@RestController
 public class Boat25_40Controller {
 
 
   @Autowired
   Boat25_40Repository boat25_40Repository;
 
-  @GetMapping("/boats")
+  @GetMapping("/boats25-40")
   public List<Boat25_40> getAllBoats() {
     return boat25_40Repository.findAll();
   }
 
-  @GetMapping("/boats/{id}")
+  @GetMapping("/boats25-40/{id}")
   public ResponseEntity<Boat25_40> getBoatById(@PathVariable(value = "id") int boatId) {
     Optional<Boat25_40> boat = boat25_40Repository.findById(boatId);
     if (boat.isPresent()) {
@@ -36,7 +32,7 @@ public class Boat25_40Controller {
     }
   }
 
-  @PostMapping("/boats")
+  @PostMapping("/boats20-40")
   public Boat25_40 addBoat(@RequestBody Boat25_40 boat) {
     try {
       return boat25_40Repository.save(boat);
@@ -46,7 +42,7 @@ public class Boat25_40Controller {
     }
   }
 
-  @PutMapping("/boats/{id}")
+  @PutMapping("/boats25-40/{id}")
   public ResponseEntity<Boat25_40> updateBoat(@PathVariable(value = "id") int boatId, @RequestBody Boat25_40 boatDetails) {
     Optional<Boat25_40> boat = boat25_40Repository.findById(boatId);
     if (boat.isPresent()) {
@@ -65,7 +61,7 @@ public class Boat25_40Controller {
     }
   }
 
-  @DeleteMapping("/boats/{id}")
+  @DeleteMapping("/boats25-40/{id}")
   public ResponseEntity<?> deleteBoat(@PathVariable(value = "id") int boatId) {
     Optional<Boat25_40> boat = boat25_40Repository.findById(boatId);
     if (boat.isPresent()) {

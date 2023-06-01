@@ -1,9 +1,7 @@
 package com.example.kapsejladseksamen.Controller;
 
 import com.example.kapsejladseksamen.Model.Boat25;
-import com.example.kapsejladseksamen.Model.Sailboats;
 import com.example.kapsejladseksamen.Repository.Boat25Repository;
-import com.example.kapsejladseksamen.Repository.SailboatsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,17 +11,18 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 import java.util.Optional;
 
+@RestController
 public class Boat25Controller {
 
   @Autowired
   Boat25Repository boat25Repository;
 
-  @GetMapping("/boats")
+  @GetMapping("/boats25")
   public List<Boat25> getAllBoats() {
     return boat25Repository.findAll();
   }
 
-  @GetMapping("/boats/{id}")
+  @GetMapping("/boats25/{id}")
   public ResponseEntity<Boat25> getBoatById(@PathVariable(value = "id") int boatId) {
     Optional<Boat25> boat = boat25Repository.findById(boatId);
     if (boat.isPresent()) {
@@ -33,7 +32,7 @@ public class Boat25Controller {
     }
   }
 
-  @PostMapping("/boats")
+  @PostMapping("/boats25")
   public Boat25 addBoat(@RequestBody Boat25 boat) {
     try {
       return boat25Repository.save(boat);
@@ -43,7 +42,7 @@ public class Boat25Controller {
     }
   }
 
-  @PutMapping("/boats/{id}")
+  @PutMapping("/boats25/{id}")
   public ResponseEntity<Boat25> updateBoat(@PathVariable(value = "id") int boatId, @RequestBody Boat25 boatDetails) {
     Optional<Boat25> boat = boat25Repository.findById(boatId);
     if (boat.isPresent()) {
@@ -62,7 +61,7 @@ public class Boat25Controller {
     }
   }
 
-  @DeleteMapping("/boats/{id}")
+  @DeleteMapping("/boats25/{id}")
   public ResponseEntity<?> deleteBoat(@PathVariable(value = "id") int boatId) {
     Optional<Boat25> boat = boat25Repository.findById(boatId);
     if (boat.isPresent()) {

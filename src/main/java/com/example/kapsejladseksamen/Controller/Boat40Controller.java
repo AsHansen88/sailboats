@@ -11,17 +11,18 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 import java.util.Optional;
 
+@RestController
 public class Boat40Controller {
 
   @Autowired
   Boat40Repository boat40Repository;
 
-  @GetMapping("/boats")
+  @GetMapping("/boats40")
   public List<Boats40> getAllBoats() {
     return boat40Repository.findAll();
   }
 
-  @GetMapping("/boats/{id}")
+  @GetMapping("/boats40/{id}")
   public ResponseEntity<Boats40> getBoatById(@PathVariable(value = "id") int boatId) {
     Optional<Boats40> boat = boat40Repository.findById(boatId);
     if (boat.isPresent()) {
@@ -31,7 +32,7 @@ public class Boat40Controller {
     }
   }
 
-  @PostMapping("/boats")
+  @PostMapping("/boats40")
   public Boats40 addBoat(@RequestBody Boats40 boat) {
     try {
       return boat40Repository.save(boat);
@@ -41,7 +42,7 @@ public class Boat40Controller {
     }
   }
 
-  @PutMapping("/boats/{id}")
+  @PutMapping("/boats40/{id}")
   public ResponseEntity<Boats40> updateBoat(@PathVariable(value = "id") int boatId, @RequestBody Boats40 boatDetails) {
     Optional<Boats40> boat = boat40Repository.findById(boatId);
     if (boat.isPresent()) {
@@ -60,7 +61,7 @@ public class Boat40Controller {
     }
   }
 
-  @DeleteMapping("/boats/{id}")
+  @DeleteMapping("/boats40/{id}")
   public ResponseEntity<?> deleteBoat(@PathVariable(value = "id") int boatId) {
     Optional<Boats40> boat = boat40Repository.findById(boatId);
     if (boat.isPresent()) {
